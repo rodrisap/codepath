@@ -1,0 +1,280 @@
+{
+ "example": {
+  "output": "Night 1: running total 500\nNight 2: running total 1000\nNight 3: running total 1500\nNight 4: running total 2000\nFinal total: 2000\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "nights = 4",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 4",
+    "vars": {
+     "nights": "4"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "rate = 500",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 500",
+    "vars": {
+     "nights": "4",
+     "rate": "500"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total = 0",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = 0",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "for night in range(1, nights + 1):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: night = 1",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "0",
+     "night": "1"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = total + rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + rate → 0 + 500 → 500",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "500",
+     "night": "1"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Night {night}: running total {total}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Night {night}: running total {total}') → print(f'Night {1}: running total {500}') → print('Night 1: running total 500')",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "500",
+     "night": "1"
+    },
+    "changed": [],
+    "output": "Night 1: running total 500\n"
+   },
+   {
+    "line": 4,
+    "code": "for night in range(1, nights + 1):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: night = 2",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "500",
+     "night": "2"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = total + rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + rate → 500 + 500 → 1000",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1000",
+     "night": "2"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Night {night}: running total {total}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Night {night}: running total {total}') → print(f'Night {2}: running total {1000}') → print('Night 2: running total 1000')",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1000",
+     "night": "2"
+    },
+    "changed": [],
+    "output": "Night 2: running total 1000\n"
+   },
+   {
+    "line": 4,
+    "code": "for night in range(1, nights + 1):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: night = 3",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1000",
+     "night": "3"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = total + rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + rate → 1000 + 500 → 1500",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1500",
+     "night": "3"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Night {night}: running total {total}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Night {night}: running total {total}') → print(f'Night {3}: running total {1500}') → print('Night 3: running total 1500')",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1500",
+     "night": "3"
+    },
+    "changed": [],
+    "output": "Night 3: running total 1500\n"
+   },
+   {
+    "line": 4,
+    "code": "for night in range(1, nights + 1):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 4: night = 4",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "1500",
+     "night": "4"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = total + rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + rate → 1500 + 500 → 2000",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "2000",
+     "night": "4"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Night {night}: running total {total}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Night {night}: running total {total}') → print(f'Night {4}: running total {2000}') → print('Night 4: running total 2000')",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "2000",
+     "night": "4"
+    },
+    "changed": [],
+    "output": "Night 4: running total 2000\n"
+   },
+   {
+    "line": 4,
+    "code": "for night in range(1, nights + 1):",
+    "scope": "main",
+    "kind": "line",
+    "how": "no items left after 4 round(s) → the loop ends",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "2000",
+     "night": "4"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(\"Final total:\", total)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Final total:', total) → print('Final total:', 2000)",
+    "vars": {
+     "nights": "4",
+     "rate": "500",
+     "total": "2000",
+     "night": "4"
+    },
+    "changed": [],
+    "output": "Final total: 2000\n"
+   }
+  ],
+  "truncated": false
+ }
+}

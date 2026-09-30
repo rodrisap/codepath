@@ -1,0 +1,544 @@
+{
+ "example": {
+  "output": "Night 7: closed for cleaning\nTarget reached on night 8 with 3150 MXN\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "target = 3000",
+    "scope": "main",
+    "kind": "line",
+    "how": "target = 3000",
+    "vars": {
+     "target": "3000"
+    },
+    "changed": [
+     "target"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "total = 0",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = 0",
+    "vars": {
+     "target": "3000",
+     "total": "0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: night = 1",
+    "vars": {
+     "target": "3000",
+     "total": "0",
+     "night": "1"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 1 % 7 == 0 → 1 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "0",
+     "night": "1"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 0 + 450 → 450",
+    "vars": {
+     "target": "3000",
+     "total": "450",
+     "night": "1"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 450 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "450",
+     "night": "1"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: night = 2",
+    "vars": {
+     "target": "3000",
+     "total": "450",
+     "night": "2"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 2 % 7 == 0 → 2 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "450",
+     "night": "2"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 450 + 450 → 900",
+    "vars": {
+     "target": "3000",
+     "total": "900",
+     "night": "2"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 900 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "900",
+     "night": "2"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: night = 3",
+    "vars": {
+     "target": "3000",
+     "total": "900",
+     "night": "3"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 3 % 7 == 0 → 3 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "900",
+     "night": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 900 + 450 → 1350",
+    "vars": {
+     "target": "3000",
+     "total": "1350",
+     "night": "3"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 1350 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "1350",
+     "night": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 4: night = 4",
+    "vars": {
+     "target": "3000",
+     "total": "1350",
+     "night": "4"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 4 % 7 == 0 → 4 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "1350",
+     "night": "4"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 1350 + 450 → 1800",
+    "vars": {
+     "target": "3000",
+     "total": "1800",
+     "night": "4"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 1800 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "1800",
+     "night": "4"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 5: night = 5",
+    "vars": {
+     "target": "3000",
+     "total": "1800",
+     "night": "5"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 5 % 7 == 0 → 5 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "1800",
+     "night": "5"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 1800 + 450 → 2250",
+    "vars": {
+     "target": "3000",
+     "total": "2250",
+     "night": "5"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 2250 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "2250",
+     "night": "5"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 6: night = 6",
+    "vars": {
+     "target": "3000",
+     "total": "2250",
+     "night": "6"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 6 % 7 == 0 → 6 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "2250",
+     "night": "6"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 2250 + 450 → 2700",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "6"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 2700 >= 3000 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "6"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 7: night = 7",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "7"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 7 % 7 == 0 → 0 == 0 → True → run the indented block",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "7"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "print(f\"Night {night}: closed for cleaning\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Night {night}: closed for cleaning') → print(f'Night {7}: closed for cleaning') → print('Night 7: closed for cleaning')",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "7"
+    },
+    "changed": [],
+    "output": "Night 7: closed for cleaning\n"
+   },
+   {
+    "line": 6,
+    "code": "continue",
+    "scope": "main",
+    "kind": "line",
+    "how": "continue → skip the rest of this round, go to the next one",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "7"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "for night in range(1, 31):",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 8: night = 8",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "8"
+    },
+    "changed": [
+     "night"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if night % 7 == 0:",
+    "scope": "main",
+    "kind": "line",
+    "how": "night % 7 == 0 → 8 % 7 == 0 → 1 == 0 → False → skip the block",
+    "vars": {
+     "target": "3000",
+     "total": "2700",
+     "night": "8"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "total = total + 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + 450 → 2700 + 450 → 3150",
+    "vars": {
+     "target": "3000",
+     "total": "3150",
+     "night": "8"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "if total >= target:",
+    "scope": "main",
+    "kind": "line",
+    "how": "total >= target → 3150 >= 3000 → True → run the indented block",
+    "vars": {
+     "target": "3000",
+     "total": "3150",
+     "night": "8"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "break",
+    "scope": "main",
+    "kind": "line",
+    "how": "break → leave the loop right now",
+    "vars": {
+     "target": "3000",
+     "total": "3150",
+     "night": "8"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"Target reached on night {night} with {total} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Target reached on night {night} with {total} MXN') → print(f'Target reached on night {8} with {3150} MXN')",
+    "vars": {
+     "target": "3000",
+     "total": "3150",
+     "night": "8"
+    },
+    "changed": [],
+    "output": "Target reached on night 8 with 3150 MXN\n"
+   }
+  ],
+  "truncated": false
+ }
+}

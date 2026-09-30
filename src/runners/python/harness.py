@@ -783,6 +783,12 @@ class _Tracer:
                 return f"round {self.loop_rounds[key]}: {target} = {value}"
             rounds = self.loop_rounds.pop(key, 0)
             return f"no items left after {rounds} round(s) → the loop ends"
+        if isinstance(node, ast.Continue):
+            return "continue → skip the rest of this round, go to the next one"
+        if isinstance(node, ast.Break):
+            return "break → leave the loop right now"
+        if isinstance(node, ast.Pass):
+            return "pass → do nothing"
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             return f"defines the function {node.name}() (its body runs only when it is called)"
         if isinstance(node, ast.ClassDef):

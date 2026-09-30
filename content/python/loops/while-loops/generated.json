@@ -1,0 +1,344 @@
+{
+ "example": {
+  "output": "Month 1: 1100.00\nMonth 2: 1210.00\nMonth 3: 1331.00\nMonth 4: 1464.10\nMonth 5: 1610.51\nTarget reached after 5 months\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "balance = 1000",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = 1000",
+    "vars": {
+     "balance": "1000"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "month = 0",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = 0",
+    "vars": {
+     "balance": "1000",
+     "month": "0"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1000 < 1500 → True → run the loop body",
+    "vars": {
+     "balance": "1000",
+     "month": "0"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "balance = balance * 1.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = balance * 1.1 → 1000 * 1.1 → 1100.0",
+    "vars": {
+     "balance": "1100.0",
+     "month": "0"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "month = month + 1",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = month + 1 → 0 + 1 → 1",
+    "vars": {
+     "balance": "1100.0",
+     "month": "1"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Month {month}: {balance:.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Month {month}: {balance:.2f}') → print(f'Month {1}: {1100.0:.2f}') → print('Month 1: 1100.00')",
+    "vars": {
+     "balance": "1100.0",
+     "month": "1"
+    },
+    "changed": [],
+    "output": "Month 1: 1100.00\n"
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1100.0 < 1500 → True → run the loop body",
+    "vars": {
+     "balance": "1100.0",
+     "month": "1"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "balance = balance * 1.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = balance * 1.1 → 1100.0 * 1.1 → 1210.0",
+    "vars": {
+     "balance": "1210.0",
+     "month": "1"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "month = month + 1",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = month + 1 → 1 + 1 → 2",
+    "vars": {
+     "balance": "1210.0",
+     "month": "2"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Month {month}: {balance:.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Month {month}: {balance:.2f}') → print(f'Month {2}: {1210.0:.2f}') → print('Month 2: 1210.00')",
+    "vars": {
+     "balance": "1210.0",
+     "month": "2"
+    },
+    "changed": [],
+    "output": "Month 2: 1210.00\n"
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1210.0 < 1500 → True → run the loop body",
+    "vars": {
+     "balance": "1210.0",
+     "month": "2"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "balance = balance * 1.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = balance * 1.1 → 1210.0 * 1.1 → 1331.0",
+    "vars": {
+     "balance": "1331.0",
+     "month": "2"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "month = month + 1",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = month + 1 → 2 + 1 → 3",
+    "vars": {
+     "balance": "1331.0",
+     "month": "3"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Month {month}: {balance:.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Month {month}: {balance:.2f}') → print(f'Month {3}: {1331.0:.2f}') → print('Month 3: 1331.00')",
+    "vars": {
+     "balance": "1331.0",
+     "month": "3"
+    },
+    "changed": [],
+    "output": "Month 3: 1331.00\n"
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1331.0 < 1500 → True → run the loop body",
+    "vars": {
+     "balance": "1331.0",
+     "month": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "balance = balance * 1.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = balance * 1.1 → 1331.0 * 1.1 → 1464.1000000000001",
+    "vars": {
+     "balance": "1464.1000000000001",
+     "month": "3"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "month = month + 1",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = month + 1 → 3 + 1 → 4",
+    "vars": {
+     "balance": "1464.1000000000001",
+     "month": "4"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Month {month}: {balance:.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Month {month}: {balance:.2f}') → print(f'Month {4}: {1464.1000000000001:.2f}') → print('Month 4: 1464.10')",
+    "vars": {
+     "balance": "1464.1000000000001",
+     "month": "4"
+    },
+    "changed": [],
+    "output": "Month 4: 1464.10\n"
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1464.1000000000001 < 1500 → True → run the loop body",
+    "vars": {
+     "balance": "1464.1000000000001",
+     "month": "4"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "balance = balance * 1.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance = balance * 1.1 → 1464.1000000000001 * 1.1 → 1610.5100000000002",
+    "vars": {
+     "balance": "1610.5100000000002",
+     "month": "4"
+    },
+    "changed": [
+     "balance"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "month = month + 1",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = month + 1 → 4 + 1 → 5",
+    "vars": {
+     "balance": "1610.5100000000002",
+     "month": "5"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(f\"Month {month}: {balance:.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Month {month}: {balance:.2f}') → print(f'Month {5}: {1610.5100000000002:.2f}') → print('Month 5: 1610.51')",
+    "vars": {
+     "balance": "1610.5100000000002",
+     "month": "5"
+    },
+    "changed": [],
+    "output": "Month 5: 1610.51\n"
+   },
+   {
+    "line": 3,
+    "code": "while balance < 1500:",
+    "scope": "main",
+    "kind": "line",
+    "how": "balance < 1500 → 1610.5100000000002 < 1500 → False → the loop ends",
+    "vars": {
+     "balance": "1610.5100000000002",
+     "month": "5"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(f\"Target reached after {month} months\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Target reached after {month} months') → print(f'Target reached after {5} months') → print('Target reached after 5 months')",
+    "vars": {
+     "balance": "1610.5100000000002",
+     "month": "5"
+    },
+    "changed": [],
+    "output": "Target reached after 5 months\n"
+   }
+  ],
+  "truncated": false
+ }
+}
