@@ -1,0 +1,442 @@
+{
+ "example": {
+  "output": "Unique guests: 3 ['Ana', 'Luis', 'Marta']\nRevenue per room: {7: 2250, 3: 2730}\nSecond booking's guest: Luis\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 2,
+    "code": "{\"guest\": \"Ana\", \"room\": 7, \"total\": 1350},",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "{\"guest\": \"Luis\", \"room\": 3, \"total\": 480},",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "{\"guest\": \"Ana\", \"room\": 7, \"total\": 900},",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "{\"guest\": \"Marta\", \"room\": 3, \"total\": 2250},",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "bookings = [",
+    "scope": "main",
+    "kind": "line",
+    "how": "bookings = [{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'room': 3, 'total': 480}, {'guest': 'Ana', 'room': 7, 'total': 900}, {'guest': 'Marta', 'room': 3, 'total': 2250}] → [{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo..."
+    },
+    "changed": [
+     "bookings"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "guests = set()",
+    "scope": "main",
+    "kind": "line",
+    "how": "guests = set()",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "set()"
+    },
+    "changed": [
+     "guests"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "revenue_per_room = {}",
+    "scope": "main",
+    "kind": "line",
+    "how": "revenue_per_room = {}",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "set()",
+     "revenue_per_room": "{}"
+    },
+    "changed": [
+     "revenue_per_room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for b in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: b = {'guest': 'Ana', 'room': 7, 'total': 1350}",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "set()",
+     "revenue_per_room": "{}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 1350}"
+    },
+    "changed": [
+     "b"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "guests.add(b[\"guest\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "guests.add(b['guest']) → guests.add('Ana')",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Ana'}",
+     "revenue_per_room": "{}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 1350}"
+    },
+    "changed": [
+     "guests"
+    ],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "room = b[\"room\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "room = b['room'] → 7",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Ana'}",
+     "revenue_per_room": "{}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 1350}",
+     "room": "7"
+    },
+    "changed": [
+     "room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b[\"total\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b['total'] → revenue_per_room.get(7, 0) + 1350 → 1350",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Ana'}",
+     "revenue_per_room": "{7: 1350}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 1350}",
+     "room": "7"
+    },
+    "changed": [
+     "revenue_per_room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for b in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: b = {'guest': 'Luis', 'room': 3, 'total': 480}",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Ana'}",
+     "revenue_per_room": "{7: 1350}",
+     "b": "{'guest': 'Luis', 'room': 3, 'total': 480}",
+     "room": "7"
+    },
+    "changed": [
+     "b"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "guests.add(b[\"guest\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "guests.add(b['guest']) → guests.add('Luis')",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350}",
+     "b": "{'guest': 'Luis', 'room': 3, 'total': 480}",
+     "room": "7"
+    },
+    "changed": [
+     "guests"
+    ],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "room = b[\"room\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "room = b['room'] → 3",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350}",
+     "b": "{'guest': 'Luis', 'room': 3, 'total': 480}",
+     "room": "3"
+    },
+    "changed": [
+     "room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b[\"total\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b['total'] → revenue_per_room.get(3, 0) + 480 → 480",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350, 3: 480}",
+     "b": "{'guest': 'Luis', 'room': 3, 'total': 480}",
+     "room": "3"
+    },
+    "changed": [
+     "revenue_per_room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for b in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: b = {'guest': 'Ana', 'room': 7, 'total': 900}",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350, 3: 480}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 900}",
+     "room": "3"
+    },
+    "changed": [
+     "b"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "guests.add(b[\"guest\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "guests.add(b['guest']) → guests.add('Ana')",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350, 3: 480}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 900}",
+     "room": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "room = b[\"room\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "room = b['room'] → 7",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 1350, 3: 480}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 900}",
+     "room": "7"
+    },
+    "changed": [
+     "room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b[\"total\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b['total'] → revenue_per_room.get(7, 0) + 900 → 2250",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 480}",
+     "b": "{'guest': 'Ana', 'room': 7, 'total': 900}",
+     "room": "7"
+    },
+    "changed": [
+     "revenue_per_room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for b in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 4: b = {'guest': 'Marta', 'room': 3, 'total': 2250}",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 480}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "7"
+    },
+    "changed": [
+     "b"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "guests.add(b[\"guest\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "guests.add(b['guest']) → guests.add('Marta')",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 480}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "7"
+    },
+    "changed": [
+     "guests"
+    ],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "room = b[\"room\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "room = b['room'] → 3",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 480}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [
+     "room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b[\"total\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "revenue_per_room[room] = revenue_per_room.get(room, 0) + b['total'] → revenue_per_room.get(3, 0) + 2250 → 2730",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 2730}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [
+     "revenue_per_room"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for b in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "no items left after 4 round(s) → the loop ends",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 2730}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 13,
+    "code": "print(\"Unique guests:\", len(guests), sorted(guests))",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Unique guests:', len(guests), sorted(guests)) → print('Unique guests:', len({'Luis', 'Marta', 'Ana'}), sorted({'Luis', 'Marta', 'Ana'})) → print('Unique guests:', 3, sorted({'Luis', 'Marta', 'Ana'}))",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 2730}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [],
+    "output": "Unique guests: 3 ['Ana', 'Luis', 'Marta']\n"
+   },
+   {
+    "line": 14,
+    "code": "print(\"Revenue per room:\", revenue_per_room)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Revenue per room:', revenue_per_room) → print('Revenue per room:', {7: 2250, 3: 2730})",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 2730}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [],
+    "output": "Revenue per room: {7: 2250, 3: 2730}\n"
+   },
+   {
+    "line": 15,
+    "code": "print(\"Second booking's guest:\", bookings[1][\"guest\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(\"Second booking's guest:\", bookings[1]['guest']) → print(\"Second booking's guest:\", 'Luis')",
+    "vars": {
+     "bookings": "[{'guest': 'Ana', 'room': 7, 'total': 1350}, {'guest': 'Luis', 'roo...",
+     "guests": "{'Luis', 'Marta', 'Ana'}",
+     "revenue_per_room": "{7: 2250, 3: 2730}",
+     "b": "{'guest': 'Marta', 'room': 3, 'total': 2250}",
+     "room": "3"
+    },
+    "changed": [],
+    "output": "Second booking's guest: Luis\n"
+   }
+  ],
+  "truncated": false
+ }
+}

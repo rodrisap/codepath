@@ -1,0 +1,327 @@
+{
+ "example": {
+  "output": "Ana Lopez is in room 7\nNumber of fields: 4\nHas an email? False\nguest: Ana Lopez\nroom: 7\nnights: 4\nrate: 450\npaid: False\nTotal before the change: 1350 | email: not given\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "booking = {\"guest\": \"Ana Lopez\", \"room\": 7, \"nights\": 3, \"rate\": 450}",
+    "scope": "main",
+    "kind": "line",
+    "how": "booking = {'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}"
+    },
+    "changed": [
+     "booking"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "print(booking[\"guest\"], \"is in room\", booking[\"room\"])",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(booking['guest'], 'is in room', booking['room']) → print('Ana Lopez', 'is in room', 7)",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}"
+    },
+    "changed": [],
+    "output": "Ana Lopez is in room 7\n"
+   },
+   {
+    "line": 3,
+    "code": "print(\"Number of fields:\", len(booking))",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}"
+    },
+    "changed": [],
+    "output": "Number of fields: 4\n"
+   },
+   {
+    "line": 4,
+    "code": "print(\"Has an email?\", \"email\" in booking)",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}"
+    },
+    "changed": [],
+    "output": "Has an email? False\n"
+   },
+   {
+    "line": 5,
+    "code": "total = booking[\"nights\"] * booking[\"rate\"]",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = booking['nights'] * booking['rate'] → 3 * 450 → 1350",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 3, 'rate': 450}",
+     "total": "1350"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "booking[\"nights\"] = 4",
+    "scope": "main",
+    "kind": "line",
+    "how": "booking['nights'] = 4",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450}",
+     "total": "1350"
+    },
+    "changed": [
+     "booking"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "booking[\"paid\"] = False",
+    "scope": "main",
+    "kind": "line",
+    "how": "booking['paid'] = False",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350"
+    },
+    "changed": [
+     "booking"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "email = booking.get(\"email\", \"not given\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "email = booking.get('email', 'not given') → 'not given'",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'"
+    },
+    "changed": [
+     "email"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: (key, value) = 'guest', 'Ana Lopez'",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'guest'",
+     "value": "'Ana Lopez'"
+    },
+    "changed": [
+     "key",
+     "value"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{key}: {value}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{key}: {value}') → print(f\"{'guest'}: {'Ana Lopez'}\") → print('guest: Ana Lopez')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'guest'",
+     "value": "'Ana Lopez'"
+    },
+    "changed": [],
+    "output": "guest: Ana Lopez\n"
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: (key, value) = 'room', 7",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'room'",
+     "value": "7"
+    },
+    "changed": [
+     "key",
+     "value"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{key}: {value}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{key}: {value}') → print(f\"{'room'}: {7}\") → print('room: 7')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'room'",
+     "value": "7"
+    },
+    "changed": [],
+    "output": "room: 7\n"
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: (key, value) = 'nights', 4",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'nights'",
+     "value": "4"
+    },
+    "changed": [
+     "key",
+     "value"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{key}: {value}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{key}: {value}') → print(f\"{'nights'}: {4}\") → print('nights: 4')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'nights'",
+     "value": "4"
+    },
+    "changed": [],
+    "output": "nights: 4\n"
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 4: (key, value) = 'rate', 450",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'rate'",
+     "value": "450"
+    },
+    "changed": [
+     "key",
+     "value"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{key}: {value}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{key}: {value}') → print(f\"{'rate'}: {450}\") → print('rate: 450')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'rate'",
+     "value": "450"
+    },
+    "changed": [],
+    "output": "rate: 450\n"
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 5: (key, value) = 'paid', False",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'paid'",
+     "value": "False"
+    },
+    "changed": [
+     "key",
+     "value"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{key}: {value}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{key}: {value}') → print(f\"{'paid'}: {False}\") → print('paid: False')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'paid'",
+     "value": "False"
+    },
+    "changed": [],
+    "output": "paid: False\n"
+   },
+   {
+    "line": 9,
+    "code": "for key, value in booking.items():",
+    "scope": "main",
+    "kind": "line",
+    "how": "no items left after 5 round(s) → the loop ends",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'paid'",
+     "value": "False"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "print(\"Total before the change:\", total, \"| email:\", email)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Total before the change:', total, '| email:', email) → print('Total before the change:', 1350, '| email:', 'not given')",
+    "vars": {
+     "booking": "{'guest': 'Ana Lopez', 'room': 7, 'nights': 4, 'rate': 450, 'paid':...",
+     "total": "1350",
+     "email": "'not given'",
+     "key": "'paid'",
+     "value": "False"
+    },
+    "changed": [],
+    "output": "Total before the change: 1350 | email: not given\n"
+   }
+  ],
+  "truncated": false
+ }
+}
