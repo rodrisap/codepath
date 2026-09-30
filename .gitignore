@@ -1,0 +1,7 @@
+node_modules
+dist
+# Copied from node_modules by `npm run vendor` (see scripts/copy-vendor.mjs)
+public/vendor
+*.log
+.DS_Store
+test-results

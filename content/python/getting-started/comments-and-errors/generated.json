@@ -1,0 +1,55 @@
+{
+ "example": {
+  "output": "Nightly report\nGuests checked in: 7\nRooms free: 5\n",
+  "error": {
+   "type": "NameError",
+   "message": "name 'totl' is not defined",
+   "line": 6,
+   "col": null,
+   "traceback": "Traceback (most recent call last):\n  File \"main.py\", line 6, in <module>\n    print(\"Revenue:\", totl)\n                      ^^^^\nNameError: name 'totl' is not defined"
+  },
+  "trace": [
+   {
+    "line": 2,
+    "code": "print(\"Nightly report\")   # a comment can follow code, too",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "Nightly report\n"
+   },
+   {
+    "line": 3,
+    "code": "print(\"Guests checked in:\", 7)",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "Guests checked in: 7\n"
+   },
+   {
+    "line": 5,
+    "code": "print(\"Rooms free:\", 12 - 7)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Rooms free:', 12 - 7) → print('Rooms free:', 5)",
+    "vars": {},
+    "changed": [],
+    "output": "Rooms free: 5\n"
+   },
+   {
+    "line": 6,
+    "code": "print(\"Revenue:\", totl)",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": ""
+   }
+  ],
+  "truncated": false
+ }
+}

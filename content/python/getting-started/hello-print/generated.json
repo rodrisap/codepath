@@ -1,0 +1,59 @@
+{
+ "example": {
+  "output": "Welcome to Motel Sol\nRooms available: 12\nPrice for 3 nights: 1350 MXN\n\nEnjoy your stay!\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "print(\"Welcome to Motel Sol\")",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "Welcome to Motel Sol\n"
+   },
+   {
+    "line": 2,
+    "code": "print(\"Rooms available:\", 12)",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "Rooms available: 12\n"
+   },
+   {
+    "line": 3,
+    "code": "print(\"Price for 3 nights:\", 3 * 450, \"MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Price for 3 nights:', 3 * 450, 'MXN') → print('Price for 3 nights:', 1350, 'MXN')",
+    "vars": {},
+    "changed": [],
+    "output": "Price for 3 nights: 1350 MXN\n"
+   },
+   {
+    "line": 4,
+    "code": "print()",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "\n"
+   },
+   {
+    "line": 5,
+    "code": "print(\"Enjoy your stay!\")",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {},
+    "changed": [],
+    "output": "Enjoy your stay!\n"
+   }
+  ],
+  "truncated": false
+ }
+}

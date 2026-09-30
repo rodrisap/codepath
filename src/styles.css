@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Every color in the app comes from these variables, so a theme
+ * is just a different set of values. Tailwind classes like `bg-surface` or
+ * `text-muted` are mapped to them in @theme below.
+ */
+:root,
+[data-theme="dark"] {
+  --cp-bg: #0f1117;
+  --cp-surface: #161a22;
+  --cp-surface-2: #1d222c;
+  --cp-surface-3: #252b37;
+  --cp-border: #2a303c;
+  --cp-fg: #e3e2de;
+  --cp-muted: #9aa1ae;
+  --cp-faint: #6c7383;
+  --cp-accent: #7aa2f7;
+  --cp-accent-strong: #9bb8ff;
+  --cp-accent-soft: rgb(122 162 247 / 0.14);
+  --cp-on-accent: #0f1117;
+  --cp-success: #5fc48a;
+  --cp-success-soft: rgb(95 196 138 / 0.13);
+  --cp-error: #f2777a;
+  --cp-error-soft: rgb(242 119 122 / 0.12);
+  --cp-warning: #e0b25c;
+  --cp-warning-soft: rgb(224 178 92 / 0.13);
+  --cp-focus: #9bb8ff;
+  /* syntax colors */
+  --cp-tok-keyword: #c099ff;
+  --cp-tok-string: #a8d58a;
+  --cp-tok-number: #f5a97f;
+  --cp-tok-comment: #6f7a8c;
+  --cp-tok-function: #7aa2f7;
+  --cp-tok-builtin: #7dcfd8;
+  --cp-tok-operator: #b7c0d0;
+  --cp-tok-bool: #f5a97f;
+  --cp-line-highlight: rgb(122 162 247 / 0.07);
+  --cp-selection: rgb(122 162 247 / 0.25);
+  color-scheme: dark;
+}
+
+/* "Night warm": dimmer, warmer, less blue light for late sessions. */
+[data-theme="warm"] {
+  --cp-bg: #13100d;
+  --cp-surface: #1a1612;
+  --cp-surface-2: #221d18;
+  --cp-surface-3: #2b251f;
+  --cp-border: #352d25;
+  --cp-fg: #d8cdbd;
+  --cp-muted: #9e9382;
+  --cp-faint: #74695b;
+  --cp-accent: #d8a15e;
+  --cp-accent-strong: #e8b77a;
+  --cp-accent-soft: rgb(216 161 94 / 0.14);
+  --cp-on-accent: #13100d;
+  --cp-success: #a3c47c;
+  --cp-success-soft: rgb(163 196 124 / 0.13);
+  --cp-error: #e38a72;
+  --cp-error-soft: rgb(227 138 114 / 0.13);
+  --cp-warning: #d9b35f;
+  --cp-warning-soft: rgb(217 179 95 / 0.13);
+  --cp-focus: #e8b77a;
+  --cp-tok-keyword: #d4a0c8;
+  --cp-tok-string: #b5c48a;
+  --cp-tok-number: #e3a676;
+  --cp-tok-comment: #776b5d;
+  --cp-tok-function: #d8a15e;
+  --cp-tok-builtin: #9fbfa8;
+  --cp-tok-operator: #b9ad9b;
+  --cp-tok-bool: #e3a676;
+  --cp-line-highlight: rgb(216 161 94 / 0.07);
+  --cp-selection: rgb(216 161 94 / 0.22);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--cp-bg);
+  --color-surface: var(--cp-surface);
+  --color-surface-2: var(--cp-surface-2);
+  --color-surface-3: var(--cp-surface-3);
+  --color-border: var(--cp-border);
+  --color-fg: var(--cp-fg);
+  --color-muted: var(--cp-muted);
+  --color-faint: var(--cp-faint);
+  --color-accent: var(--cp-accent);
+  --color-accent-strong: var(--cp-accent-strong);
+  --color-accent-soft: var(--cp-accent-soft);
+  --color-on-accent: var(--cp-on-accent);
+  --color-success: var(--cp-success);
+  --color-success-soft: var(--cp-success-soft);
+  --color-error: var(--cp-error);
+  --color-error-soft: var(--cp-error-soft);
+  --color-warning: var(--cp-warning);
+  --color-warning-soft: var(--cp-warning-soft);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  font-size: var(--cp-font-size, 17px);
+  background: var(--cp-bg);
+}
+
+body {
+  background: var(--cp-bg);
+  color: var(--cp-fg);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--cp-selection);
+}
+
+/* Visible, consistent keyboard focus everywhere. */
+:focus-visible {
+  outline: 2px solid var(--cp-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Quiet scrollbars that fit the dark theme. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cp-surface-3) transparent;
+}
+
+/* ---- Markdown content ---------------------------------------------------- */
+.prose-cp {
+  max-width: 70ch;
+}
+.prose-cp > * + * {
+  margin-top: 0.75em;
+}
+.prose-cp h3 {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-top: 1.4em;
+}
+.prose-cp strong {
+  color: var(--cp-fg);
+  font-weight: 600;
+}
+.prose-cp a {
+  color: var(--cp-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-cp ul {
+  list-style: disc;
+  padding-left: 1.3em;
+}
+.prose-cp ol {
+  list-style: decimal;
+  padding-left: 1.3em;
+}
+.prose-cp li + li {
+  margin-top: 0.25em;
+}
+.prose-cp :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--cp-surface-2);
+  border: 1px solid var(--cp-border);
+  border-radius: 5px;
+  padding: 0.08em 0.35em;
+}
+.prose-cp pre {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  overflow-x: auto;
+}
+.prose-cp blockquote {
+  border-left: 3px solid var(--cp-accent);
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  color: var(--cp-muted);
+}
+.prose-cp table {
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.prose-cp th,
+.prose-cp td {
+  border: 1px solid var(--cp-border);
+  padding: 0.3rem 0.65rem;
+  text-align: left;
+}
+.prose-cp th {
+  background: var(--cp-surface-2);
+  font-weight: 600;
+}
+
+/* ---- Syntax highlighting (shared by the editor and static code blocks) --- */
+.tok-keyword { color: var(--cp-tok-keyword); }
+.tok-string, .tok-string2 { color: var(--cp-tok-string); }
+.tok-number { color: var(--cp-tok-number); }
+.tok-bool, .tok-atom { color: var(--cp-tok-bool); }
+.tok-comment { color: var(--cp-tok-comment); font-style: italic; }
+.tok-variableName.tok-definition, .tok-function { color: var(--cp-tok-function); }
+.tok-propertyName { color: var(--cp-tok-builtin); }
+.tok-typeName, .tok-className { color: var(--cp-tok-builtin); }
+.tok-operator, .tok-punctuation { color: var(--cp-tok-operator); }
+.tok-self { color: var(--cp-tok-keyword); font-style: italic; }
+
+/* ---- Small, calm reward animation ----------------------------------------- */
+@keyframes cp-draw {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes cp-pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.cp-check-anim { animation: cp-pop 380ms ease-out both; }
+.cp-check-anim path {
+  stroke-dasharray: 24;
+  animation: cp-draw 420ms 120ms ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-check-anim, .cp-check-anim path { animation: none; }
+}
