@@ -60,7 +60,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-border bg-bg/90 px-3 backdrop-blur sm:px-4">
         <button
           type="button"
-          className="rounded-lg p-2 text-muted hover:bg-surface-2 hover:text-fg lg:hidden"
+          className="rounded-lg p-2 text-muted hover:bg-surface-2 hover:text-fg xl:hidden"
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
           aria-controls="sidebar"
@@ -79,7 +79,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               to={l.to}
               end={l.to === "/"}
               className={({ isActive }) =>
-                cx("flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm", isActive ? "bg-surface-2 text-fg" : "text-muted hover:text-fg")
+                cx("flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-sm", isActive ? "bg-surface-2 text-fg" : "text-muted hover:text-fg")
               }
             >
               <Icon name={l.icon} size={16} />
@@ -93,13 +93,13 @@ export function AppShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-1.5 sm:gap-3">
-          <span className={cx("text-xs text-success transition-opacity", recentlySaved ? "opacity-100" : "opacity-0")} aria-live="polite">
+          <span className={cx("whitespace-nowrap text-xs text-success transition-opacity", recentlySaved ? "opacity-100" : "opacity-0")} aria-live="polite">
             {recentlySaved ? "✓ Saved" : ""}
           </span>
           <span className="flex items-center gap-1 text-sm text-muted" title="Days in a row with practice">
             <Icon name="flame" size={17} className={streak > 0 ? "text-warning" : "text-faint"} />
             <span className="tabular-nums">{streak}</span>
-            <span className="sr-only sm:not-sr-only">day streak</span>
+            <span className="sr-only xl:not-sr-only">day streak</span>
           </span>
           <button
             type="button"
@@ -121,7 +121,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <aside
           id="sidebar"
           className={cx(
-            "fixed inset-y-0 left-0 top-14 z-20 w-72 shrink-0 overflow-y-auto border-r border-border bg-bg lg:sticky lg:block lg:h-[calc(100vh-3.5rem)]",
+            "fixed inset-y-0 left-0 top-14 z-20 w-72 shrink-0 overflow-y-auto border-r border-border bg-bg xl:sticky xl:block xl:h-[calc(100vh-3.5rem)]",
             menuOpen ? "block" : "hidden",
           )}
         >
@@ -135,7 +135,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </nav>
           <Sidebar onNavigate={() => setMenuOpen(false)} />
         </aside>
-        {menuOpen && <div className="fixed inset-0 top-14 z-10 bg-black/40 lg:hidden" onClick={() => setMenuOpen(false)} aria-hidden="true" />}
+        {menuOpen && <div className="fixed inset-0 top-14 z-10 bg-black/40 xl:hidden" onClick={() => setMenuOpen(false)} aria-hidden="true" />}
         <main id="main" className="min-w-0 flex-1" tabIndex={-1}>
           {children}
         </main>

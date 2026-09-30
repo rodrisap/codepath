@@ -74,7 +74,7 @@ function LessonView({ loaded, path }: { loaded: LoadedLesson; path: string }) {
   const openTab = (key: string) => {
     setActiveKey(key);
     // On narrow screens the workbench is below the text: bring it into view.
-    if (window.matchMedia("(max-width: 1099px)").matches) workbenchRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (window.matchMedia("(max-width: 1023px)").matches) workbenchRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const tabs: WorkTab[] = [
@@ -113,7 +113,7 @@ function LessonView({ loaded, path }: { loaded: LoadedLesson; path: string }) {
   }, [activeKey, progress, data, path, tryItDefault, exerciseIds]);
 
   return (
-    <div className="mx-auto grid max-w-[1500px] gap-6 px-4 py-6 sm:px-6 min-[1100px]:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+    <div className="mx-auto grid max-w-[1500px] gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       <article className="min-w-0 space-y-9" aria-labelledby="lesson-title">
         {/* Header + Goal */}
         <header>
@@ -279,7 +279,7 @@ function LessonView({ loaded, path }: { loaded: LoadedLesson; path: string }) {
         </nav>
       </article>
 
-      <div ref={workbenchRef} className="min-w-0 min-[1100px]:sticky min-[1100px]:top-[4.5rem] min-[1100px]:max-h-[calc(100vh-5.5rem)] min-[1100px]:self-start min-[1100px]:overflow-y-auto">
+      <div ref={workbenchRef} className="min-w-0 lg:sticky lg:top-[4.5rem] lg:max-h-[calc(100vh-5.5rem)] lg:self-start lg:overflow-y-auto">
         <Workbench tabs={tabs} activeKey={target.key} onSelectTab={setActiveKey} target={target} />
       </div>
     </div>
