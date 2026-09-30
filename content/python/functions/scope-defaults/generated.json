@@ -1,0 +1,379 @@
+{
+ "example": {
+  "output": "900 1200 1090\n800.0 0.1\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "def price(nights, rate=450, breakfast=False):",
+    "scope": "main",
+    "kind": "line",
+    "how": "defines the function price() (its body runs only when it is called)",
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "call price(nights=2, rate=450, breakfast=False)",
+    "scope": "price",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "False"
+    },
+    "changed": [
+     "nights",
+     "rate",
+     "breakfast"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total = nights * rate",
+    "scope": "price",
+    "kind": "line",
+    "how": "total = nights * rate → 2 * 450 → 900",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "False",
+     "total": "900"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if breakfast:",
+    "scope": "price",
+    "kind": "line",
+    "how": "breakfast → False → skip the block",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "False",
+     "total": "900"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "return total",
+    "scope": "price",
+    "kind": "line",
+    "how": "return total → 900",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "False",
+     "total": "900"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "a = price(2)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "a = price(2) → 900",
+    "vars": {
+     "a": "900"
+    },
+    "changed": [
+     "a"
+    ],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "call price(nights=2, rate=600, breakfast=False)",
+    "scope": "price",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "nights": "2",
+     "rate": "600",
+     "breakfast": "False"
+    },
+    "changed": [
+     "nights",
+     "rate",
+     "breakfast"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total = nights * rate",
+    "scope": "price",
+    "kind": "line",
+    "how": "total = nights * rate → 2 * 600 → 1200",
+    "vars": {
+     "nights": "2",
+     "rate": "600",
+     "breakfast": "False",
+     "total": "1200"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if breakfast:",
+    "scope": "price",
+    "kind": "line",
+    "how": "breakfast → False → skip the block",
+    "vars": {
+     "nights": "2",
+     "rate": "600",
+     "breakfast": "False",
+     "total": "1200"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "return total",
+    "scope": "price",
+    "kind": "line",
+    "how": "return total → 1200",
+    "vars": {
+     "nights": "2",
+     "rate": "600",
+     "breakfast": "False",
+     "total": "1200"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "b = price(2, 600)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "b = price(2, 600) → 1200",
+    "vars": {
+     "a": "900",
+     "b": "1200"
+    },
+    "changed": [
+     "b"
+    ],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "call price(nights=2, rate=450, breakfast=True)",
+    "scope": "price",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "True"
+    },
+    "changed": [
+     "nights",
+     "rate",
+     "breakfast"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total = nights * rate",
+    "scope": "price",
+    "kind": "line",
+    "how": "total = nights * rate → 2 * 450 → 900",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "True",
+     "total": "900"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if breakfast:",
+    "scope": "price",
+    "kind": "line",
+    "how": "breakfast → True → run the indented block",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "True",
+     "total": "900"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = total + nights * 95",
+    "scope": "price",
+    "kind": "line",
+    "how": "total = total + nights * 95 → 900 + 2 * 95 → 900 + 190 → 1090",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "True",
+     "total": "1090"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "return total",
+    "scope": "price",
+    "kind": "line",
+    "how": "return total → 1090",
+    "vars": {
+     "nights": "2",
+     "rate": "450",
+     "breakfast": "True",
+     "total": "1090"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "c = price(2, breakfast=True)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "c = price(2, breakfast=True) → 1090",
+    "vars": {
+     "a": "900",
+     "b": "1200",
+     "c": "1090"
+    },
+    "changed": [
+     "c"
+    ],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "print(a, b, c)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(a, b, c) → print(900, 1200, 1090)",
+    "vars": {
+     "a": "900",
+     "b": "1200",
+     "c": "1090"
+    },
+    "changed": [],
+    "output": "900 1200 1090\n"
+   },
+   {
+    "line": 13,
+    "code": "discount = 0.1",
+    "scope": "main",
+    "kind": "line",
+    "how": "discount = 0.1",
+    "vars": {
+     "a": "900",
+     "b": "1200",
+     "c": "1090",
+     "discount": "0.1"
+    },
+    "changed": [
+     "discount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 14,
+    "code": "def apply_discount(amount):",
+    "scope": "main",
+    "kind": "line",
+    "how": "defines the function apply_discount() (its body runs only when it is called)",
+    "vars": {
+     "a": "900",
+     "b": "1200",
+     "c": "1090",
+     "discount": "0.1"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 14,
+    "code": "call apply_discount(amount=1000)",
+    "scope": "apply_discount",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "amount": "1000"
+    },
+    "changed": [
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 15,
+    "code": "discount = 0.2",
+    "scope": "apply_discount",
+    "kind": "line",
+    "how": "discount = 0.2",
+    "vars": {
+     "amount": "1000",
+     "discount": "0.2"
+    },
+    "changed": [
+     "discount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 16,
+    "code": "return amount * (1 - discount)",
+    "scope": "apply_discount",
+    "kind": "line",
+    "how": "return amount * (1 - discount) → 1000 * (1 - 0.2) → 1000 * 0.8 → 800.0",
+    "vars": {
+     "amount": "1000",
+     "discount": "0.2"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 18,
+    "code": "print(apply_discount(1000), discount)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "print(apply_discount(1000), discount) → print(apply_discount(1000), 0.1)",
+    "vars": {
+     "a": "900",
+     "b": "1200",
+     "c": "1090",
+     "discount": "0.1"
+    },
+    "changed": [],
+    "output": "800.0 0.1\n"
+   }
+  ],
+  "truncated": false
+ }
+}

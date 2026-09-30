@@ -744,6 +744,12 @@ class _Tracer:
         self.prev_vars[id(frame)] = now
         step["output"] = self._output_since_last()
         step["how"] = self._describe(step, frame, next_line, retval, returning)
+        # If this line called a function, its steps were recorded in between.
+        # Move this row after them: the assignment happens once the call has returned.
+        position = next(i for i in range(len(self.steps) - 1, -1, -1) if self.steps[i] is step)
+        if position != len(self.steps) - 1:
+            self.steps.append(self.steps.pop(position))
+            step["kind"] = "return-to"
 
     def _describe(self, step, frame, next_line, retval, returning):
         node, expr = step.pop("_node"), step.pop("_expr")

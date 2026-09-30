@@ -1,0 +1,179 @@
+{
+ "example": {
+  "output": "Ana: 1566.00 MXN\nLuis: 1160.00 MXN\nTogether: 2726.00 MXN\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "def booking_total(nights, rate):",
+    "scope": "main",
+    "kind": "line",
+    "how": "defines the function booking_total() (its body runs only when it is called)",
+    "vars": {},
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "call booking_total(nights=3, rate=450)",
+    "scope": "booking_total",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "nights": "3",
+     "rate": "450"
+    },
+    "changed": [
+     "nights",
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "subtotal = nights * rate",
+    "scope": "booking_total",
+    "kind": "line",
+    "how": "subtotal = nights * rate → 3 * 450 → 1350",
+    "vars": {
+     "nights": "3",
+     "rate": "450",
+     "subtotal": "1350"
+    },
+    "changed": [
+     "subtotal"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "return subtotal * 1.16",
+    "scope": "booking_total",
+    "kind": "line",
+    "how": "return subtotal * 1.16 → 1350 * 1.16 → 1566.0",
+    "vars": {
+     "nights": "3",
+     "rate": "450",
+     "subtotal": "1350"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "ana = booking_total(3, 450)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "ana = booking_total(3, 450) → 1566.0",
+    "vars": {
+     "ana": "1566.0"
+    },
+    "changed": [
+     "ana"
+    ],
+    "output": ""
+   },
+   {
+    "line": 1,
+    "code": "call booking_total(nights=2, rate=500)",
+    "scope": "booking_total",
+    "kind": "call",
+    "how": "a new, separate set of variables is created for this call",
+    "vars": {
+     "nights": "2",
+     "rate": "500"
+    },
+    "changed": [
+     "nights",
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "subtotal = nights * rate",
+    "scope": "booking_total",
+    "kind": "line",
+    "how": "subtotal = nights * rate → 2 * 500 → 1000",
+    "vars": {
+     "nights": "2",
+     "rate": "500",
+     "subtotal": "1000"
+    },
+    "changed": [
+     "subtotal"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "return subtotal * 1.16",
+    "scope": "booking_total",
+    "kind": "line",
+    "how": "return subtotal * 1.16 → 1000 * 1.16 → 1160.0",
+    "vars": {
+     "nights": "2",
+     "rate": "500",
+     "subtotal": "1000"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "luis = booking_total(2, 500)",
+    "scope": "main",
+    "kind": "return-to",
+    "how": "luis = booking_total(2, 500) → 1160.0",
+    "vars": {
+     "ana": "1566.0",
+     "luis": "1160.0"
+    },
+    "changed": [
+     "luis"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(f\"Ana: {ana:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Ana: {ana:.2f} MXN') → print(f'Ana: {1566.0:.2f} MXN') → print('Ana: 1566.00 MXN')",
+    "vars": {
+     "ana": "1566.0",
+     "luis": "1160.0"
+    },
+    "changed": [],
+    "output": "Ana: 1566.00 MXN\n"
+   },
+   {
+    "line": 8,
+    "code": "print(f\"Luis: {luis:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Luis: {luis:.2f} MXN') → print(f'Luis: {1160.0:.2f} MXN') → print('Luis: 1160.00 MXN')",
+    "vars": {
+     "ana": "1566.0",
+     "luis": "1160.0"
+    },
+    "changed": [],
+    "output": "Luis: 1160.00 MXN\n"
+   },
+   {
+    "line": 9,
+    "code": "print(f\"Together: {ana + luis:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Together: {ana + luis:.2f} MXN') → print(f'Together: {1566.0 + 1160.0:.2f} MXN') → print(f'Together: {2726.0:.2f} MXN') → print('Together: 2726.00 MXN')",
+    "vars": {
+     "ana": "1566.0",
+     "luis": "1160.0"
+    },
+    "changed": [],
+    "output": "Together: 2726.00 MXN\n"
+   }
+  ],
+  "truncated": false
+ }
+}

@@ -21,7 +21,8 @@ export interface TraceStep {
   line: number;
   code: string;
   scope: string; // "main" or the function name
-  kind: "line" | "call";
+  /** "return-to": this line called a function and continues after the call returned. */
+  kind: "line" | "call" | "return-to";
   how: string | null;
   vars: Record<string, string>;
   changed: string[];

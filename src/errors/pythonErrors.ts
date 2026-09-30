@@ -126,6 +126,15 @@ const rules: Rule[] = [
     }),
   },
   {
+    type: "UnboundLocalError",
+    message: /local variable '(\w+)'/,
+    explain: (m, e) => ({
+      title: `\`${m[1]}\` is used inside the function before it gets a value there`,
+      explanation: `Because the function *assigns* to \`${m[1]}\` somewhere, Python treats it as a new local variable for the whole function, separate from the one outside. Pass the value in as a parameter and \`return\` the new value instead.`,
+      lookAt: lineRef(e),
+    }),
+  },
+  {
     type: "TypeError",
     message: /can only concatenate str \(not "(\w+)"\) to str/,
     explain: (m, e) => ({

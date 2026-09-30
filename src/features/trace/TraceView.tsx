@@ -120,7 +120,10 @@ export function TraceView({ code, steps, error, truncated, initialMode = "step",
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wide text-faint">What happens</dt>
-                <dd className="mt-0.5 font-mono text-[0.85rem] text-accent">{step.how ?? (step.output ? "prints output" : "runs the line")}</dd>
+                <dd className="mt-0.5 font-mono text-[0.85rem] text-accent">
+                  {step.kind === "return-to" && <span className="mr-1 font-sans text-xs text-muted">(back from the call above)</span>}
+                  {step.how ?? (step.output ? "prints output" : "runs the line")}
+                </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wide text-faint">Variables after this step</dt>
@@ -160,7 +163,10 @@ export function TraceView({ code, steps, error, truncated, initialMode = "step",
                     </div>
                     {s.scope !== "main" && <div className="pl-2.5 text-xs text-faint">in {s.scope}()</div>}
                   </td>
-                  <td className="px-2 py-1.5 font-mono text-[0.8rem] text-accent">{s.how ?? ""}</td>
+                  <td className="px-2 py-1.5 font-mono text-[0.8rem] text-accent">
+                    {s.kind === "return-to" && <span className="mr-1 font-sans text-xs text-muted">↩ after the call:</span>}
+                    {s.how ?? ""}
+                  </td>
                   <td className="px-2 py-1.5">
                     <Vars step={s} />
                   </td>
