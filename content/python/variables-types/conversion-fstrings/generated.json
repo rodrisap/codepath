@@ -1,0 +1,197 @@
+{
+ "example": {
+  "output": "Room 7 total: 1350\nRoom 7: 3 nights x 450 MXN = 1350 MXN\nAverage per night: 450.00 MXN\nYear revenue: 1,234,567.89 MXN\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "price_text = \"450\"",
+    "scope": "main",
+    "kind": "line",
+    "how": "price_text = '450'",
+    "vars": {
+     "price_text": "'450'"
+    },
+    "changed": [
+     "price_text"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "nights = 3",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 3",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "price = int(price_text)",
+    "scope": "main",
+    "kind": "line",
+    "how": "price = int(price_text) → int('450') → 450",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450"
+    },
+    "changed": [
+     "price"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "total = price * nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = price * nights → 450 * 3 → 1350",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "label = \"Room \" + str(7)",
+    "scope": "main",
+    "kind": "line",
+    "how": "label = 'Room ' + str(7) → 'Room ' + '7' → 'Room 7'",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'"
+    },
+    "changed": [
+     "label"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "avg = total / nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "avg = total / nights → 1350 / 3 → 450.0",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0"
+    },
+    "changed": [
+     "avg"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(label, \"total:\", total)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(label, 'total:', total) → print('Room 7', 'total:', 1350)",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0"
+    },
+    "changed": [],
+    "output": "Room 7 total: 1350\n"
+   },
+   {
+    "line": 8,
+    "code": "print(f\"{label}: {nights} nights x {price} MXN = {total} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{label}: {nights} nights x {price} MXN = {total} MXN') → print(f\"{'Room 7'}: {3} nights x {450} MXN = {1350} MXN\") → print('Room 7: 3 nights x 450 MXN = 1350 MXN')",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0"
+    },
+    "changed": [],
+    "output": "Room 7: 3 nights x 450 MXN = 1350 MXN\n"
+   },
+   {
+    "line": 9,
+    "code": "print(f\"Average per night: {avg:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Average per night: {avg:.2f} MXN') → print(f'Average per night: {450.0:.2f} MXN') → print('Average per night: 450.00 MXN')",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0"
+    },
+    "changed": [],
+    "output": "Average per night: 450.00 MXN\n"
+   },
+   {
+    "line": 10,
+    "code": "year_revenue = 1234567.891",
+    "scope": "main",
+    "kind": "line",
+    "how": "year_revenue = 1234567.891",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0",
+     "year_revenue": "1234567.891"
+    },
+    "changed": [
+     "year_revenue"
+    ],
+    "output": ""
+   },
+   {
+    "line": 11,
+    "code": "print(f\"Year revenue: {year_revenue:,.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Year revenue: {year_revenue:,.2f} MXN') → print(f'Year revenue: {1234567.891:,.2f} MXN') → print('Year revenue: 1,234,567.89 MXN')",
+    "vars": {
+     "price_text": "'450'",
+     "nights": "3",
+     "price": "450",
+     "total": "1350",
+     "label": "'Room 7'",
+     "avg": "450.0",
+     "year_revenue": "1234567.891"
+    },
+    "changed": [],
+    "output": "Year revenue: 1,234,567.89 MXN\n"
+   }
+  ],
+  "truncated": false
+ }
+}

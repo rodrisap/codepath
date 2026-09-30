@@ -1,0 +1,248 @@
+{
+ "example": {
+  "output": "Subtotal: 2341.5\nVAT: 337.18\nTotal: 2444.53 MXN\nIn euros: 113.70 EUR\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "nights = 3",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 3",
+    "vars": {
+     "nights": "3"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "rate = 780.50",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 780.5",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "discount = 0.10",
+    "scope": "main",
+    "kind": "line",
+    "how": "discount = 0.1",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1"
+    },
+    "changed": [
+     "discount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "vat = 0.16",
+    "scope": "main",
+    "kind": "line",
+    "how": "vat = 0.16",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16"
+    },
+    "changed": [
+     "vat"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "subtotal = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "subtotal = nights * rate → 3 * 780.5 → 2341.5",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5"
+    },
+    "changed": [
+     "subtotal"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "after_discount = subtotal * (1 - discount)",
+    "scope": "main",
+    "kind": "line",
+    "how": "after_discount = subtotal * (1 - discount) → 2341.5 * (1 - 0.1) → 2341.5 * 0.9 → 2107.35",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35"
+    },
+    "changed": [
+     "after_discount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "vat_amount = after_discount * vat",
+    "scope": "main",
+    "kind": "line",
+    "how": "vat_amount = after_discount * vat → 2107.35 * 0.16 → 337.176",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176"
+    },
+    "changed": [
+     "vat_amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "total = after_discount + vat_amount",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = after_discount + vat_amount → 2107.35 + 337.176 → 2444.526",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "print(\"Subtotal:\", subtotal)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Subtotal:', subtotal) → print('Subtotal:', 2341.5)",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526"
+    },
+    "changed": [],
+    "output": "Subtotal: 2341.5\n"
+   },
+   {
+    "line": 10,
+    "code": "print(\"VAT:\", round(vat_amount, 2))",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('VAT:', round(vat_amount, 2)) → print('VAT:', round(337.176, 2)) → print('VAT:', 337.18)",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526"
+    },
+    "changed": [],
+    "output": "VAT: 337.18\n"
+   },
+   {
+    "line": 11,
+    "code": "print(f\"Total: {total:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'Total: {total:.2f} MXN') → print(f'Total: {2444.526:.2f} MXN') → print('Total: 2444.53 MXN')",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526"
+    },
+    "changed": [],
+    "output": "Total: 2444.53 MXN\n"
+   },
+   {
+    "line": 12,
+    "code": "eur = total / 21.5",
+    "scope": "main",
+    "kind": "line",
+    "how": "eur = total / 21.5 → 2444.526 / 21.5 → 113.69888372093023",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526",
+     "eur": "113.69888372093023"
+    },
+    "changed": [
+     "eur"
+    ],
+    "output": ""
+   },
+   {
+    "line": 13,
+    "code": "print(f\"In euros: {eur:.2f} EUR\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'In euros: {eur:.2f} EUR') → print(f'In euros: {113.69888372093023:.2f} EUR') → print('In euros: 113.70 EUR')",
+    "vars": {
+     "nights": "3",
+     "rate": "780.5",
+     "discount": "0.1",
+     "vat": "0.16",
+     "subtotal": "2341.5",
+     "after_discount": "2107.35",
+     "vat_amount": "337.176",
+     "total": "2444.526",
+     "eur": "113.69888372093023"
+    },
+    "changed": [],
+    "output": "In euros: 113.70 EUR\n"
+   }
+  ],
+  "truncated": false
+ }
+}

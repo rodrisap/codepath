@@ -1,0 +1,243 @@
+{
+ "example": {
+  "output": "Weeks: 2 | extra nights: 3\nCost: 6950\nAverage per night: 408.8235294117647\n200 300\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "nights = 17",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 17",
+    "vars": {
+     "nights": "17"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "week_rate = 2800",
+    "scope": "main",
+    "kind": "line",
+    "how": "week_rate = 2800",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800"
+    },
+    "changed": [
+     "week_rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "night_rate = 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "night_rate = 450",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450"
+    },
+    "changed": [
+     "night_rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "weeks = nights // 7",
+    "scope": "main",
+    "kind": "line",
+    "how": "weeks = nights // 7 → 17 // 7 → 2",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2"
+    },
+    "changed": [
+     "weeks"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "extra_nights = nights % 7",
+    "scope": "main",
+    "kind": "line",
+    "how": "extra_nights = nights % 7 → 17 % 7 → 3",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3"
+    },
+    "changed": [
+     "extra_nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "cost = weeks * week_rate + extra_nights * night_rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "cost = weeks * week_rate + extra_nights * night_rate → 2 * 2800 + 3 * 450 → 5600 + 3 * 450 → 5600 + 1350 → 6950",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950"
+    },
+    "changed": [
+     "cost"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(\"Weeks:\", weeks, \"| extra nights:\", extra_nights)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Weeks:', weeks, '| extra nights:', extra_nights) → print('Weeks:', 2, '| extra nights:', 3)",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950"
+    },
+    "changed": [],
+    "output": "Weeks: 2 | extra nights: 3\n"
+   },
+   {
+    "line": 8,
+    "code": "print(\"Cost:\", cost)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Cost:', cost) → print('Cost:', 6950)",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950"
+    },
+    "changed": [],
+    "output": "Cost: 6950\n"
+   },
+   {
+    "line": 9,
+    "code": "avg = cost / nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "avg = cost / nights → 6950 / 17 → 408.8235294117647",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950",
+     "avg": "408.8235294117647"
+    },
+    "changed": [
+     "avg"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(\"Average per night:\", avg)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Average per night:', avg) → print('Average per night:', 408.8235294117647)",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950",
+     "avg": "408.8235294117647"
+    },
+    "changed": [],
+    "output": "Average per night: 408.8235294117647\n"
+   },
+   {
+    "line": 11,
+    "code": "without_brackets = 100 + 50 * 2",
+    "scope": "main",
+    "kind": "line",
+    "how": "without_brackets = 100 + 50 * 2 → 100 + 100 → 200",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950",
+     "avg": "408.8235294117647",
+     "without_brackets": "200"
+    },
+    "changed": [
+     "without_brackets"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "with_brackets = (100 + 50) * 2",
+    "scope": "main",
+    "kind": "line",
+    "how": "with_brackets = (100 + 50) * 2 → 150 * 2 → 300",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950",
+     "avg": "408.8235294117647",
+     "without_brackets": "200",
+     "with_brackets": "300"
+    },
+    "changed": [
+     "with_brackets"
+    ],
+    "output": ""
+   },
+   {
+    "line": 13,
+    "code": "print(without_brackets, with_brackets)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(without_brackets, with_brackets) → print(200, 300)",
+    "vars": {
+     "nights": "17",
+     "week_rate": "2800",
+     "night_rate": "450",
+     "weeks": "2",
+     "extra_nights": "3",
+     "cost": "6950",
+     "avg": "408.8235294117647",
+     "without_brackets": "200",
+     "with_brackets": "300"
+    },
+    "changed": [],
+    "output": "200 300\n"
+   }
+  ],
+  "truncated": false
+ }
+}

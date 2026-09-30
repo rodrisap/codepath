@@ -13,5 +13,6 @@ for (const f of pyodideFiles) {
   cpSync(resolve(root, "node_modules/pyodide", f), resolve(out, "pyodide", f));
 }
 cpSync(resolve(root, "node_modules/sql.js/dist/sql-wasm.wasm"), resolve(out, "sql-wasm.wasm"));
-cpSync(resolve(root, "node_modules/coi-serviceworker/coi-serviceworker.min.js"), resolve(out, "coi-serviceworker.js"));
+// The service worker must sit at the site root: it only controls pages at or below its own folder.
+cpSync(resolve(root, "node_modules/coi-serviceworker/coi-serviceworker.min.js"), resolve(root, "public/coi-serviceworker.js"));
 console.log("vendor files copied to public/vendor");

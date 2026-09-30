@@ -166,7 +166,7 @@ for (const track of tracks) {
       const genPath = resolve(dir, "generated.json");
       const json = JSON.stringify(generated, null, 1) + "\n";
       if (checkOnly) {
-        const existing = existsSync(genPath) ? JSON.parse(readFileSync(genPath, "utf8")) : null;
+        const existing = existsSync(genPath) ? JSON.parse(readFileSync(genPath, "utf8")) : {};
         if (!isDeepStrictEqual(existing, JSON.parse(json))) fail(path, "generated.json is out of date: run `npm run content`");
       } else if (Object.keys(generated).length) {
         writeFileSync(genPath, json);

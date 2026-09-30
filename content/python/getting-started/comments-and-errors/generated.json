@@ -44,7 +44,7 @@
     "code": "print(\"Revenue:\", totl)",
     "scope": "main",
     "kind": "line",
-    "how": null,
+    "how": "💥 NameError: the program stops here",
     "vars": {},
     "changed": [],
     "output": ""

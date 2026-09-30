@@ -1,0 +1,155 @@
+{
+ "example": {
+  "output": "Ana Lopez pays 1350.0 MXN\nNights now: 4 | total still: 1350.0\n<class 'int'> <class 'float'> <class 'str'> <class 'bool'>\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "guest = \"Ana Lopez\"",
+    "scope": "main",
+    "kind": "line",
+    "how": "guest = 'Ana Lopez'",
+    "vars": {
+     "guest": "'Ana Lopez'"
+    },
+    "changed": [
+     "guest"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "nights = 3",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 3",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "3"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "rate = 450.0",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 450.0",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "3",
+     "rate": "450.0"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "is_member = True",
+    "scope": "main",
+    "kind": "line",
+    "how": "is_member = True",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "3",
+     "rate": "450.0",
+     "is_member": "True"
+    },
+    "changed": [
+     "is_member"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "total = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = nights * rate → 3 * 450.0 → 1350.0",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "3",
+     "rate": "450.0",
+     "is_member": "True",
+     "total": "1350.0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(guest, \"pays\", total, \"MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(guest, 'pays', total, 'MXN') → print('Ana Lopez', 'pays', 1350.0, 'MXN')",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "3",
+     "rate": "450.0",
+     "is_member": "True",
+     "total": "1350.0"
+    },
+    "changed": [],
+    "output": "Ana Lopez pays 1350.0 MXN\n"
+   },
+   {
+    "line": 7,
+    "code": "nights = 4",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 4",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "4",
+     "rate": "450.0",
+     "is_member": "True",
+     "total": "1350.0"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "print(\"Nights now:\", nights, \"| total still:\", total)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Nights now:', nights, '| total still:', total) → print('Nights now:', 4, '| total still:', 1350.0)",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "4",
+     "rate": "450.0",
+     "is_member": "True",
+     "total": "1350.0"
+    },
+    "changed": [],
+    "output": "Nights now: 4 | total still: 1350.0\n"
+   },
+   {
+    "line": 9,
+    "code": "print(type(nights), type(rate), type(guest), type(is_member))",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(type(nights), type(rate), type(guest), type(is_member)) → print(type(4), type(450.0), type('Ana Lopez'), type(True))",
+    "vars": {
+     "guest": "'Ana Lopez'",
+     "nights": "4",
+     "rate": "450.0",
+     "is_member": "True",
+     "total": "1350.0"
+    },
+    "changed": [],
+    "output": "<class 'int'> <class 'float'> <class 'str'> <class 'bool'>\n"
+   }
+  ],
+  "truncated": false
+ }
+}

@@ -13,7 +13,17 @@
       "Stop" button need. On localhost the dev server sends the headers itself and
       this script does nothing.
     -->
-    <script src="./vendor/coi-serviceworker.js"></script>
+    <script>
+      // Reload at most once per tab session, so a misbehaving host can never cause a reload loop.
+      window.coi = {
+        doReload: () => {
+          if (sessionStorage.getItem("coi-reloaded")) return;
+          sessionStorage.setItem("coi-reloaded", "1");
+          window.location.reload();
+        },
+      };
+    </script>
+    <script src="./coi-serviceworker.js"></script>
   </head>
   <body>
     <div id="root"></div>

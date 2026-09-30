@@ -249,14 +249,19 @@ def _show(value):
 def _type_hint(expected, actual):
     """Extra explanation for the most common beginner mix-ups."""
     if actual is None and expected is not None:
-        return "It returned None, which usually means the function has no `return` (or it only prints)."
+        return "None usually means a function has no `return` (or it only prints)."
     if _is_number(expected) and isinstance(actual, str):
-        return f"You returned the text {actual!r} (a str), not a number."
+        return f"That's the text {actual!r} (a str), not a number."
     if isinstance(expected, str) and _is_number(actual):
-        return f"You returned the number {actual!r}, but text (a str) was expected."
-    if isinstance(expected, int) and isinstance(actual, float) and actual != expected:
-        return "Check your rounding."
+        return f"That's the number {actual!r}, but text (a str) was expected."
     return ""
+
+
+def _show_expected(expected, actual):
+    """JSON has no float/int distinction (1395.0 arrives as 1395): match the learner's type for display."""
+    if isinstance(expected, int) and not isinstance(expected, bool) and isinstance(actual, float):
+        return _show(float(expected))
+    return _show(expected)
 
 
 def _join(*parts):
@@ -270,18 +275,22 @@ def _normalize_output(text):
     return lines
 
 
+def _clip(text, limit=90):
+    return text if len(text) <= limit else text[: limit - 1] + "…"
+
+
 def _compare_output(expected, actual):
     exp, act = _normalize_output(expected), _normalize_output(actual)
     for i, (e, a) in enumerate(zip(exp, act), start=1):
         if e != a:
-            return f"Line {i} should be `{e}` but your program printed `{a}`."
+            return f"Line {i} should be `{e}` but your program printed `{_clip(a)}`."
     if len(act) < len(exp):
         missing = exp[len(act)]
         return (f"Your program printed {len(act)} line(s) but {len(exp)} were expected. "
                 f"The first missing line is `{missing}`.")
     if len(act) > len(exp):
         return (f"Your program printed {len(act)} lines but only {len(exp)} were expected. "
-                f"Extra line: `{act[len(exp)]}`.")
+                f"Extra line: `{_clip(act[len(exp)])}`.")
     return ""
 
 
@@ -341,11 +350,11 @@ def _run_one_test(test, code, default_stdin, files):
     if kind == "var":
         name = test["variable"]
         if name not in ns:
-            return False, _join(f"There is no variable called `{name}`. Check the spelling.", hint), None
+            return False, f"There is no variable called `{name}`. Check the spelling (capitals count).", None
         actual = ns[name]
         if _same(test["expect"], actual):
             return True, "", None
-        return False, _join(f"`{name}` should be {_show(test['expect'])}, but it is {_show(actual)}.",
+        return False, _join(f"`{name}` should be {_show_expected(test['expect'], actual)}, but it is {_show(actual)}.",
                             _type_hint(test["expect"], actual), hint), None
 
     if kind in ("call", "raises"):
@@ -371,7 +380,7 @@ def _run_one_test(test, code, default_stdin, files):
             return False, f"Calling `{call}` crashed with {info['type']}{where}: {info['message']}", info
         if _same(test["expect"], actual):
             return True, "", None
-        return False, _join(f"`{call}` should return {_show(test['expect'])}, but it returned {_show(actual)}.",
+        return False, _join(f"`{call}` should return {_show_expected(test['expect'], actual)}, but it returned {_show(actual)}.",
                             _type_hint(test["expect"], actual), hint), None
 
     if kind == "py":
@@ -854,8 +863,13 @@ def _cp_trace(opts_json):
         if "vars" not in step:
             step.pop("_node", None)
             step.pop("_expr", None)
-            step.update({"vars": {}, "changed": [], "output": "",
-                         "how": "💥 this line raised an error" if error else None})
+            step.update({"vars": {}, "changed": [], "output": "", "how": None})
+    # Mark the step where the program crashed.
+    if error and error.get("line"):
+        for step in reversed(tracer.steps):
+            if step["line"] == error["line"]:
+                step["how"] = _chain(step.get("how"), f"💥 {error['type']}: the program stops here")
+                break
     leftover = session.transcript()[tracer.consumed:]
     if leftover and tracer.steps:
         tracer.steps[-1]["output"] += leftover
