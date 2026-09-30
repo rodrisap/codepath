@@ -1,0 +1,312 @@
+{
+ "example": {
+  "output": "Ana: 3 nights = 1350 MXN\nLuis: 1 nights = 450 MXN\nMarta: 5 nights = 2250 MXN\nTotal nights: 9\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "bookings = [(\"Ana\", 3), (\"Luis\", 1), (\"Marta\", 5)]",
+    "scope": "main",
+    "kind": "line",
+    "how": "bookings = [('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]"
+    },
+    "changed": [
+     "bookings"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "rate = 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 450",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total_nights = 0",
+    "scope": "main",
+    "kind": "line",
+    "how": "total_nights = 0",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "0"
+    },
+    "changed": [
+     "total_nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "for guest, nights in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: (guest, nights) = 'Ana', 3",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "0",
+     "guest": "'Ana'",
+     "nights": "3"
+    },
+    "changed": [
+     "guest",
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "cost = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "cost = nights * rate → 3 * 450 → 1350",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "0",
+     "guest": "'Ana'",
+     "nights": "3",
+     "cost": "1350"
+    },
+    "changed": [
+     "cost"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "total_nights = total_nights + nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "total_nights = total_nights + nights → 0 + 3 → 3",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "3",
+     "guest": "'Ana'",
+     "nights": "3",
+     "cost": "1350"
+    },
+    "changed": [
+     "total_nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(f\"{guest}: {nights} nights = {cost} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{guest}: {nights} nights = {cost} MXN') → print(f\"{'Ana'}: {3} nights = {1350} MXN\") → print('Ana: 3 nights = 1350 MXN')",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "3",
+     "guest": "'Ana'",
+     "nights": "3",
+     "cost": "1350"
+    },
+    "changed": [],
+    "output": "Ana: 3 nights = 1350 MXN\n"
+   },
+   {
+    "line": 4,
+    "code": "for guest, nights in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: (guest, nights) = 'Luis', 1",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "3",
+     "guest": "'Luis'",
+     "nights": "1",
+     "cost": "1350"
+    },
+    "changed": [
+     "guest",
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "cost = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "cost = nights * rate → 1 * 450 → 450",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "3",
+     "guest": "'Luis'",
+     "nights": "1",
+     "cost": "450"
+    },
+    "changed": [
+     "cost"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "total_nights = total_nights + nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "total_nights = total_nights + nights → 3 + 1 → 4",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "4",
+     "guest": "'Luis'",
+     "nights": "1",
+     "cost": "450"
+    },
+    "changed": [
+     "total_nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(f\"{guest}: {nights} nights = {cost} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{guest}: {nights} nights = {cost} MXN') → print(f\"{'Luis'}: {1} nights = {450} MXN\") → print('Luis: 1 nights = 450 MXN')",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "4",
+     "guest": "'Luis'",
+     "nights": "1",
+     "cost": "450"
+    },
+    "changed": [],
+    "output": "Luis: 1 nights = 450 MXN\n"
+   },
+   {
+    "line": 4,
+    "code": "for guest, nights in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: (guest, nights) = 'Marta', 5",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "4",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "450"
+    },
+    "changed": [
+     "guest",
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "cost = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "cost = nights * rate → 5 * 450 → 2250",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "4",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "2250"
+    },
+    "changed": [
+     "cost"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "total_nights = total_nights + nights",
+    "scope": "main",
+    "kind": "line",
+    "how": "total_nights = total_nights + nights → 4 + 5 → 9",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "9",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "2250"
+    },
+    "changed": [
+     "total_nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(f\"{guest}: {nights} nights = {cost} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{guest}: {nights} nights = {cost} MXN') → print(f\"{'Marta'}: {5} nights = {2250} MXN\") → print('Marta: 5 nights = 2250 MXN')",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "9",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "2250"
+    },
+    "changed": [],
+    "output": "Marta: 5 nights = 2250 MXN\n"
+   },
+   {
+    "line": 4,
+    "code": "for guest, nights in bookings:",
+    "scope": "main",
+    "kind": "line",
+    "how": "no items left after 3 round(s) → the loop ends",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "9",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "2250"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "print(\"Total nights:\", total_nights)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Total nights:', total_nights) → print('Total nights:', 9)",
+    "vars": {
+     "bookings": "[('Ana', 3), ('Luis', 1), ('Marta', 5)]",
+     "rate": "450",
+     "total_nights": "9",
+     "guest": "'Marta'",
+     "nights": "5",
+     "cost": "2250"
+    },
+    "changed": [],
+    "output": "Total nights: 9\n"
+   }
+  ],
+  "truncated": false
+ }
+}
