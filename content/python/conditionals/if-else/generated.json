@@ -1,0 +1,130 @@
+{
+ "example": {
+  "output": "Weekly discount applied!\nDiscount: 360.0\nTo pay: 3240.0\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "nights = 8",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 8",
+    "vars": {
+     "nights": "8"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "rate = 450",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 450",
+    "vars": {
+     "nights": "8",
+     "rate": "450"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "total = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = nights * rate → 8 * 450 → 3600",
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "if nights >= 7:",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights >= 7 → 8 >= 7 → True → run the indented block",
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "discount = total * 0.10",
+    "scope": "main",
+    "kind": "line",
+    "how": "discount = total * 0.1 → 3600 * 0.1 → 360.0",
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600",
+     "discount": "360.0"
+    },
+    "changed": [
+     "discount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "print(\"Weekly discount applied!\")",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600",
+     "discount": "360.0"
+    },
+    "changed": [],
+    "output": "Weekly discount applied!\n"
+   },
+   {
+    "line": 9,
+    "code": "print(\"Discount:\", discount)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('Discount:', discount) → print('Discount:', 360.0)",
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600",
+     "discount": "360.0"
+    },
+    "changed": [],
+    "output": "Discount: 360.0\n"
+   },
+   {
+    "line": 10,
+    "code": "print(\"To pay:\", total - discount)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print('To pay:', total - discount) → print('To pay:', 3600 - 360.0) → print('To pay:', 3240.0)",
+    "vars": {
+     "nights": "8",
+     "rate": "450",
+     "total": "3600",
+     "discount": "360.0"
+    },
+    "changed": [],
+    "output": "To pay: 3240.0\n"
+   }
+  ],
+  "truncated": false
+ }
+}

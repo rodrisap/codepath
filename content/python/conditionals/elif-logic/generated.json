@@ -1,0 +1,150 @@
+{
+ "example": {
+  "output": "Tip: offer the loyalty membership\nhigh season: 3 x 750 = 2250 MXN\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "month = 12",
+    "scope": "main",
+    "kind": "line",
+    "how": "month = 12",
+    "vars": {
+     "month": "12"
+    },
+    "changed": [
+     "month"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "nights = 3",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = 3",
+    "vars": {
+     "month": "12",
+     "nights": "3"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "if month == 12 or month == 1:",
+    "scope": "main",
+    "kind": "line",
+    "how": "month == 12 or month == 1 → 12 == 12 or 12 == 1 → True or 12 == 1 → True → run the indented block",
+    "vars": {
+     "month": "12",
+     "nights": "3"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "season = \"high\"",
+    "scope": "main",
+    "kind": "line",
+    "how": "season = 'high'",
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'"
+    },
+    "changed": [
+     "season"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "rate = 750",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = 750",
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'",
+     "rate": "750"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "is_member = False",
+    "scope": "main",
+    "kind": "line",
+    "how": "is_member = False",
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'",
+     "rate": "750",
+     "is_member": "False"
+    },
+    "changed": [
+     "is_member"
+    ],
+    "output": ""
+   },
+   {
+    "line": 13,
+    "code": "if nights >= 3 and not is_member:",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights >= 3 and (not is_member) → 3 >= 3 and (not False) → True and (not False) → not False → True → run the indented block",
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'",
+     "rate": "750",
+     "is_member": "False"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 14,
+    "code": "print(\"Tip: offer the loyalty membership\")",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'",
+     "rate": "750",
+     "is_member": "False"
+    },
+    "changed": [],
+    "output": "Tip: offer the loyalty membership\n"
+   },
+   {
+    "line": 15,
+    "code": "print(f\"{season} season: {nights} x {rate} = {nights * rate} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{season} season: {nights} x {rate} = {nights * rate} MXN') → print(f\"{'high'} season: {3} x {750} = {3 * 750} MXN\") → print(f\"{'high'} season: {3} x {750} = {2250} MXN\") → print('high season: 3 x 750 = 2250 MXN')",
+    "vars": {
+     "month": "12",
+     "nights": "3",
+     "season": "'high'",
+     "rate": "750",
+     "is_member": "False"
+    },
+    "changed": [],
+    "output": "high season: 3 x 750 = 2250 MXN\n"
+   }
+  ],
+  "truncated": false
+ }
+}

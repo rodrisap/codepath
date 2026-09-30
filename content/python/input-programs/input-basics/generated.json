@@ -1,0 +1,86 @@
+{
+ "example": {
+  "output": "Guest name: Ana\nNights: 3\nRate per night (MXN): 450\nAna: 3 nights x 450.00 = 1350.00 MXN\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "name = input(\"Guest name: \")",
+    "scope": "main",
+    "kind": "line",
+    "how": "name = input('Guest name: ') → 'Ana'",
+    "vars": {
+     "name": "'Ana'"
+    },
+    "changed": [
+     "name"
+    ],
+    "output": "Guest name: Ana\n"
+   },
+   {
+    "line": 2,
+    "code": "nights = int(input(\"Nights: \"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "nights = int(input('Nights: ')) → 3",
+    "vars": {
+     "name": "'Ana'",
+     "nights": "3"
+    },
+    "changed": [
+     "nights"
+    ],
+    "output": "Nights: 3\n"
+   },
+   {
+    "line": 3,
+    "code": "rate = float(input(\"Rate per night (MXN): \"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "rate = float(input('Rate per night (MXN): ')) → 450.0",
+    "vars": {
+     "name": "'Ana'",
+     "nights": "3",
+     "rate": "450.0"
+    },
+    "changed": [
+     "rate"
+    ],
+    "output": "Rate per night (MXN): 450\n"
+   },
+   {
+    "line": 4,
+    "code": "total = nights * rate",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = nights * rate → 3 * 450.0 → 1350.0",
+    "vars": {
+     "name": "'Ana'",
+     "nights": "3",
+     "rate": "450.0",
+     "total": "1350.0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "print(f\"{name}: {nights} nights x {rate:.2f} = {total:.2f} MXN\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{name}: {nights} nights x {rate:.2f} = {total:.2f} MXN') → print(f\"{'Ana'}: {3} nights x {450.0:.2f} = {1350.0:.2f} MXN\") → print('Ana: 3 nights x 450.00 = 1350.00 MXN')",
+    "vars": {
+     "name": "'Ana'",
+     "nights": "3",
+     "rate": "450.0",
+     "total": "1350.0"
+    },
+    "changed": [],
+    "output": "Ana: 3 nights x 450.00 = 1350.00 MXN\n"
+   }
+  ],
+  "truncated": false
+ }
+}
