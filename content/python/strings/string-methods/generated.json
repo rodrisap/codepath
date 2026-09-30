@@ -1,0 +1,210 @@
+{
+ "example": {
+  "output": "Ana Lopez | ana.lopez@mail.com | ['MX', '2025', '0042'] | 2025\nANA LOPEZ 9 True\nAna Lopez Ruiz\nAna | Luis | Marta\nRoom        Rate\n101          450\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "raw = \"  ana LOPEZ  \"",
+    "scope": "main",
+    "kind": "line",
+    "how": "raw = '  ana LOPEZ  '",
+    "vars": {
+     "raw": "'  ana LOPEZ  '"
+    },
+    "changed": [
+     "raw"
+    ],
+    "output": ""
+   },
+   {
+    "line": 2,
+    "code": "name = raw.strip().title()",
+    "scope": "main",
+    "kind": "line",
+    "how": "name = raw.strip().title() → 'Ana Lopez'",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'"
+    },
+    "changed": [
+     "name"
+    ],
+    "output": ""
+   },
+   {
+    "line": 3,
+    "code": "email = \"Ana.Lopez@Mail.com\".lower()",
+    "scope": "main",
+    "kind": "line",
+    "how": "email = 'Ana.Lopez@Mail.com'.lower() → 'ana.lopez@mail.com'",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'"
+    },
+    "changed": [
+     "email"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "code = \"MX-2025-0042\"",
+    "scope": "main",
+    "kind": "line",
+    "how": "code = 'MX-2025-0042'",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'"
+    },
+    "changed": [
+     "code"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "parts = code.split(\"-\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "parts = code.split('-') → ['MX', '2025', '0042']",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']"
+    },
+    "changed": [
+     "parts"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "year = parts[1]",
+    "scope": "main",
+    "kind": "line",
+    "how": "year = parts[1] → '2025'",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [
+     "year"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "print(name, \"|\", email, \"|\", parts, \"|\", year)",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(name, '|', email, '|', parts, '|', year) → print('Ana Lopez', '|', 'ana.lopez@mail.com', '|', ['MX', '2025', '0042'], '|', '2025')",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "Ana Lopez | ana.lopez@mail.com | ['MX', '2025', '0042'] | 2025\n"
+   },
+   {
+    "line": 8,
+    "code": "print(name.upper(), len(name), name.startswith(\"Ana\"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(name.upper(), len(name), name.startswith('Ana')) → print(name.upper(), len('Ana Lopez'), name.startswith('Ana'))",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "ANA LOPEZ 9 True\n"
+   },
+   {
+    "line": 9,
+    "code": "print(name.replace(\"Lopez\", \"Lopez Ruiz\"))",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "Ana Lopez Ruiz\n"
+   },
+   {
+    "line": 10,
+    "code": "print(\" | \".join([\"Ana\", \"Luis\", \"Marta\"]))",
+    "scope": "main",
+    "kind": "line",
+    "how": null,
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "Ana | Luis | Marta\n"
+   },
+   {
+    "line": 11,
+    "code": "print(f\"{'Room':<8}{'Rate':>8}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f\"{'Room':<8}{'Rate':>8}\") → print('Room        Rate')",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "Room        Rate\n"
+   },
+   {
+    "line": 12,
+    "code": "print(f\"{'101':<8}{450:>8}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f\"{'101':<8}{450:>8}\") → print('101          450')",
+    "vars": {
+     "raw": "'  ana LOPEZ  '",
+     "name": "'Ana Lopez'",
+     "email": "'ana.lopez@mail.com'",
+     "code": "'MX-2025-0042'",
+     "parts": "['MX', '2025', '0042']",
+     "year": "'2025'"
+    },
+    "changed": [],
+    "output": "101          450\n"
+   }
+  ],
+  "truncated": false
+ }
+}

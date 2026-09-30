@@ -1,0 +1,466 @@
+{
+ "example": {
+  "output": "Ana Lopez   MX    1350.00\nJohn Smith  US     980.50\nLena Vogel  DE    2100.00\nTOTAL             4430.50\n",
+  "error": null,
+  "trace": [
+   {
+    "line": 1,
+    "code": "rows = [\"  Ana Lopez ; mx ; 1.350,00 \",",
+    "scope": "main",
+    "kind": "line",
+    "how": "rows = ['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel ;DE; 2.100 '] → ['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel..."
+    },
+    "changed": [
+     "rows"
+    ],
+    "output": ""
+   },
+   {
+    "line": 4,
+    "code": "total = 0",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = 0",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "for row in rows:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 1: row = '  Ana Lopez ; mx ; 1.350,00 '",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '"
+    },
+    "changed": [
+     "row"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "name, country, amount = row.split(\";\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "(name, country, amount) = row.split(';') → '  Ana Lopez ', ' mx ', ' 1.350,00 '",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'  Ana Lopez '",
+     "country": "' mx '",
+     "amount": "' 1.350,00 '"
+    },
+    "changed": [
+     "name",
+     "country",
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "name = name.strip().title()",
+    "scope": "main",
+    "kind": "line",
+    "how": "name = name.strip().title() → 'Ana Lopez'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'Ana Lopez'",
+     "country": "' mx '",
+     "amount": "' 1.350,00 '"
+    },
+    "changed": [
+     "name"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "country = country.strip().upper()",
+    "scope": "main",
+    "kind": "line",
+    "how": "country = country.strip().upper() → 'MX'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'Ana Lopez'",
+     "country": "'MX'",
+     "amount": "' 1.350,00 '"
+    },
+    "changed": [
+     "country"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "amount = float(amount.strip().replace(\".\", \"\").replace(\",\", \".\"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "amount = float(amount.strip().replace('.', '').replace(',', '.')) → 1350.0",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'Ana Lopez'",
+     "country": "'MX'",
+     "amount": "1350.0"
+    },
+    "changed": [
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{name:<12}{country:<4}{amount:>9.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{name:<12}{country:<4}{amount:>9.2f}') → print(f\"{'Ana Lopez':<12}{'MX':<4}{1350.0:>9.2f}\") → print('Ana Lopez   MX    1350.00')",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'Ana Lopez'",
+     "country": "'MX'",
+     "amount": "1350.0"
+    },
+    "changed": [],
+    "output": "Ana Lopez   MX    1350.00\n"
+   },
+   {
+    "line": 11,
+    "code": "total = total + amount",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + amount → 0 + 1350.0 → 1350.0",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'  Ana Lopez ; mx ; 1.350,00 '",
+     "name": "'Ana Lopez'",
+     "country": "'MX'",
+     "amount": "1350.0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "for row in rows:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 2: row = 'JOHN SMITH;us;980,5'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'Ana Lopez'",
+     "country": "'MX'",
+     "amount": "1350.0"
+    },
+    "changed": [
+     "row"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "name, country, amount = row.split(\";\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "(name, country, amount) = row.split(';') → 'JOHN SMITH', 'us', '980,5'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'JOHN SMITH'",
+     "country": "'us'",
+     "amount": "'980,5'"
+    },
+    "changed": [
+     "name",
+     "country",
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "name = name.strip().title()",
+    "scope": "main",
+    "kind": "line",
+    "how": "name = name.strip().title() → 'John Smith'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'John Smith'",
+     "country": "'us'",
+     "amount": "'980,5'"
+    },
+    "changed": [
+     "name"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "country = country.strip().upper()",
+    "scope": "main",
+    "kind": "line",
+    "how": "country = country.strip().upper() → 'US'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'John Smith'",
+     "country": "'US'",
+     "amount": "'980,5'"
+    },
+    "changed": [
+     "country"
+    ],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "amount = float(amount.strip().replace(\".\", \"\").replace(\",\", \".\"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "amount = float(amount.strip().replace('.', '').replace(',', '.')) → 980.5",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'John Smith'",
+     "country": "'US'",
+     "amount": "980.5"
+    },
+    "changed": [
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{name:<12}{country:<4}{amount:>9.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{name:<12}{country:<4}{amount:>9.2f}') → print(f\"{'John Smith':<12}{'US':<4}{980.5:>9.2f}\") → print('John Smith  US     980.50')",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "1350.0",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'John Smith'",
+     "country": "'US'",
+     "amount": "980.5"
+    },
+    "changed": [],
+    "output": "John Smith  US     980.50\n"
+   },
+   {
+    "line": 11,
+    "code": "total = total + amount",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + amount → 1350.0 + 980.5 → 2330.5",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'JOHN SMITH;us;980,5'",
+     "name": "'John Smith'",
+     "country": "'US'",
+     "amount": "980.5"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "for row in rows:",
+    "scope": "main",
+    "kind": "line",
+    "how": "round 3: row = 'lena vogel ;DE; 2.100 '",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'John Smith'",
+     "country": "'US'",
+     "amount": "980.5"
+    },
+    "changed": [
+     "row"
+    ],
+    "output": ""
+   },
+   {
+    "line": 6,
+    "code": "name, country, amount = row.split(\";\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "(name, country, amount) = row.split(';') → 'lena vogel ', 'DE', ' 2.100 '",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'lena vogel '",
+     "country": "'DE'",
+     "amount": "' 2.100 '"
+    },
+    "changed": [
+     "name",
+     "country",
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 7,
+    "code": "name = name.strip().title()",
+    "scope": "main",
+    "kind": "line",
+    "how": "name = name.strip().title() → 'Lena Vogel'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "' 2.100 '"
+    },
+    "changed": [
+     "name"
+    ],
+    "output": ""
+   },
+   {
+    "line": 8,
+    "code": "country = country.strip().upper()",
+    "scope": "main",
+    "kind": "line",
+    "how": "country = country.strip().upper() → 'DE'",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "' 2.100 '"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 9,
+    "code": "amount = float(amount.strip().replace(\".\", \"\").replace(\",\", \".\"))",
+    "scope": "main",
+    "kind": "line",
+    "how": "amount = float(amount.strip().replace('.', '').replace(',', '.')) → 2100.0",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "2100.0"
+    },
+    "changed": [
+     "amount"
+    ],
+    "output": ""
+   },
+   {
+    "line": 10,
+    "code": "print(f\"{name:<12}{country:<4}{amount:>9.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f'{name:<12}{country:<4}{amount:>9.2f}') → print(f\"{'Lena Vogel':<12}{'DE':<4}{2100.0:>9.2f}\") → print('Lena Vogel  DE    2100.00')",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "2330.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "2100.0"
+    },
+    "changed": [],
+    "output": "Lena Vogel  DE    2100.00\n"
+   },
+   {
+    "line": 11,
+    "code": "total = total + amount",
+    "scope": "main",
+    "kind": "line",
+    "how": "total = total + amount → 2330.5 + 2100.0 → 4430.5",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "4430.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "2100.0"
+    },
+    "changed": [
+     "total"
+    ],
+    "output": ""
+   },
+   {
+    "line": 5,
+    "code": "for row in rows:",
+    "scope": "main",
+    "kind": "line",
+    "how": "no items left after 3 round(s) → the loop ends",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "4430.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "2100.0"
+    },
+    "changed": [],
+    "output": ""
+   },
+   {
+    "line": 12,
+    "code": "print(f\"{'TOTAL':<16}{total:>9.2f}\")",
+    "scope": "main",
+    "kind": "line",
+    "how": "print(f\"{'TOTAL':<16}{total:>9.2f}\") → print(f\"{'TOTAL':<16}{4430.5:>9.2f}\") → print('TOTAL             4430.50')",
+    "vars": {
+     "rows": "['  Ana Lopez ; mx ; 1.350,00 ', 'JOHN SMITH;us;980,5', 'lena vogel...",
+     "total": "4430.5",
+     "row": "'lena vogel ;DE; 2.100 '",
+     "name": "'Lena Vogel'",
+     "country": "'DE'",
+     "amount": "2100.0"
+    },
+    "changed": [],
+    "output": "TOTAL             4430.50\n"
+   }
+  ],
+  "truncated": false
+ }
+}
